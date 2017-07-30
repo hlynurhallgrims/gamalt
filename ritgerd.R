@@ -31,8 +31,8 @@ plot(exp$year[35:46], exp$exp_ann_growth[35:46], type = "l",
 				lty = 2);
 grid(nx = NULL, ny = 0, col = "blue");
 legend(x = 1996, y = 20, legend = c("Hagvöxtur á ári (%)",
-																"Fjárútlát (%-breyting)"),
-					lty = c(1,2), col = c("black","red"));
+				    "Fjárútlát (%-breyting)"),
+				    lty = c(1,2), col = c("black","red"));
 abline(0, 0, col = "grey");
 #Fylgni milli hagvaxtar og fjárútlátabreytinga 1996 til 2007
 cor(wdi$growth_perc[35:46], exp$exp_ann_growth[35:46]);
@@ -122,11 +122,11 @@ for (i in 2:48) {
 										+ sur[i:j,3]);
 		if (summary(temp_LM)$coefficients[2,4] < pValue) {
 				print(paste("Fyrir",sur[i,1],
-									"sem byrjunarár og",
-									sur[j,1], "sem lokaár"));
+					    "sem byrjunarár og",
+					    sur[j,1], "sem lokaár"));
 			tafla <- rbind(tafla, c(sur[i,1], sur[j,1],
-															summary(temp_LM)$coefficients[2,1],
-															summary(temp_LM)$coefficients[2,4]));
+			summary(temp_LM)$coefficients[2,1],
+			summary(temp_LM)$coefficients[2,4]));
 		}
 	}
 }
@@ -167,9 +167,9 @@ umreikn <- read.csv("cycle_scatter.csv")
 # Mynd 7
 #Öll sveifluáhrifa tímabil við p-gildi < 0.05
 ts.plot(cycle, gpars = list(xaxt = "n", col = rainbow(10),
-														ylim = c(-1.5,1.5), xlim = c(-2,48),
-														main = "Öll sveifluáhrifatímabil við p-gildi < 0.05",
-														xlab = "Ártal", ylab = "Sveifluáhrif (beta)"));
+	ylim = c(-1.5,1.5), xlim = c(-2,48),
+	main = "Öll sveifluáhrifatímabil við p-gildi < 0.05",
+	xlab = "Ártal", ylab = "Sveifluáhrif (beta)"));
 grid(nx = 54, ny = 0, col = "grey");
 par(new = T);
 plot(medaltal$year, medaltal$average, type = "l", lwd = 0, ylim = c(-1.5,1.5),
@@ -179,8 +179,8 @@ abline(0, 0, col = "grey");
 # Mynd 8
 # Tímalína sveifluáhrifa
 ts.plot(cycle, gpars = list(xaxt = "n", col = rainbow(10), ylim = c(-1.5,1.5),
-														xlim = c(-2,48), main = "Tímalína sveifluáhrifa",
-														xlab = "Ártal", ylab = "Sveifluáhrif (beta)"));
+	xlim = c(-2,48), main = "Tímalína sveifluáhrifa",
+	xlab = "Ártal", ylab = "Sveifluáhrif (beta)"));
 grid(nx = 54, ny = 0, col = "grey");
 par(new = T);
 plot(medaltal$year, medaltal$average, type = "l", ylim = c(-1.5,1.5),
